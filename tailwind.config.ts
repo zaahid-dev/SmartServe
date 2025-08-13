@@ -64,6 +64,8 @@ export default {
         navy: "var(--navy)",
         platinum: "var(--platinum)",
         electric: "var(--electric)",
+        silver: "var(--silver)",
+        midnight: "var(--midnight)",
         "gradient-start": "var(--gradient-start)",
         "gradient-end": "var(--gradient-end)",
       },
@@ -77,6 +79,7 @@ export default {
         "premium-gradient": "var(--premium-gradient)",
         "hero-gradient": "var(--hero-gradient)",
         "card-gradient": "var(--card-gradient)",
+        "glass-gradient": "var(--glass-gradient)",
       },
       keyframes: {
         "accordion-down": {

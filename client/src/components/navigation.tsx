@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImage from "@assets/Smart-Serve-LOGO(NORMAL)_1755070777977.png";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,17 +18,15 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const logoSvg = `data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMjAiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl8xXzEpIi8+CjxwYXRoIGQ9Ik0yMCA4QzE4LjM0IDggMTcgOS4zNCAxNyAxMUMxNyAxMi42NiAxOC4zNCAxNCAyMCAxNEMyMS42NiAxNCAyMyAxMi42NiAyMyAxMUMyMyA5LjM0IDIxLjY2IDggMjAgOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNyAxNkMyNS4zNCAxNiAyNCAxNy4zNCAyNCAxOUMyNCAyMC42NiAyNS4zNCAyMiAyNyAyMkMyOC42NiAyMiAzMCAyMC42NiAzMCAxOUMzMCAxNy4zNCAyOC42NiAxNiAyNyAxNloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMyAxNkMxMS4zNCAxNiAxMCAxNy4zNCAxMCAxOUMxMCAyMC42NiAxMS4zNCAyMiAxMyAyMkMxNC42NiAyMiAxNiAyMC42NiAxNiAxOUMxNiAxNy4zNCAyOC42NiAxNiAxMyAxNloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMCAyNEMxOC4zNCAyNCAxNyAyNS4zNCAxNyAyN0MxNyAyOC42NiAxOC4zNCAzMCAyMCAzMEMyMS42NiAzMCAyMyAyOC42NiAyMyAyN0MyMyAyNS4zNCAyMS42NiAyNCAyMCAyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMCAxNkgxMy4zTDEwIDI3SDMwTDI2LjcgMTZIMjAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzFfMSIgeDE9IjAiIHkxPSIwIiB4Mj0iNDAiIHkyPSI0MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjM2NkYxIi8+CjxzdG9wIG9mZnNldD0iMC41IiBzdG9wLWNvbG9yPSIjOEI1Q0Y2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzNCODJGNiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=`;
-
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-morphism' : 'glass-morphism'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-3" data-testid="nav-logo">
-            <img src={logoSvg} alt="SmartServeAI Logo" className="w-10 h-10" />
+            <img src={logoImage} alt="SmartServeAI Logo" className="w-12 h-12" />
             <div>
-              <div className="text-xl font-bold text-navy">SmartServeAI</div>
-              <div className="text-xs text-gray-500">Your Business on Autopilot</div>
+              <div className="text-xl font-bold text-navy">SMART-SERVE</div>
+              <div className="text-xs text-silver">YOUR BUSINESS ON AUTOPILOT</div>
             </div>
           </Link>
           

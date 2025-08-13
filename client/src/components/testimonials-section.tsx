@@ -2,7 +2,7 @@ import { Star } from "lucide-react";
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-20 bg-navy relative overflow-hidden">
+    <section className="py-20 bg-midnight relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-gradient-start rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-gradient-end rounded-full blur-3xl"></div>

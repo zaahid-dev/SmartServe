@@ -30,11 +30,11 @@ export default function HeroSection() {
             <Button 
               variant="outline"
               className="border-2 border-white px-8 py-4 rounded-full text-white font-bold text-lg premium-hover hover:bg-white hover:text-navy"
-              onClick={() => window.open('https://wa.me/27823333775', '_blank')}
+              onClick={() => window.open('https://your-demo-link.com', '_blank')}
               data-testid="hero-watch-demo"
             >
               <Play className="mr-2" />
-              Chat on WhatsApp
+              Watch Demo
             </Button>
           </div>
         </div>

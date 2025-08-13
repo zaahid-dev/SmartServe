@@ -21,7 +21,7 @@ export default function Pricing() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-gradient-to-br from-white to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-platinum to-silver">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
             {/* Advanced Automation Bots */}
@@ -122,6 +122,10 @@ export default function Pricing() {
                     <div className="text-sm text-gray-600 mb-2">Combined with Automation License</div>
                     <div className="text-3xl font-black gradient-text">R1,900/mo</div>
                     <div className="text-xs text-gray-500">+ usage tiers</div>
+                    <div className="mt-3 pt-3 border-t border-gray-200">
+                      <div className="text-xs text-gray-600">One-time Implementation</div>
+                      <div className="text-lg font-bold text-navy">R1,500</div>
+                    </div>
                   </div>
                 </div>
 
@@ -215,7 +219,7 @@ export default function Pricing() {
           </div>
 
           {/* Enterprise CTA */}
-          <div className="bg-navy rounded-3xl p-12 text-center text-white relative overflow-hidden" data-testid="pricing-enterprise">
+          <div className="bg-midnight rounded-3xl p-12 text-center text-white relative overflow-hidden" data-testid="pricing-enterprise">
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-start rounded-full blur-3xl"></div>
               <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-end rounded-full blur-3xl"></div>
@@ -238,7 +242,7 @@ export default function Pricing() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-100">
+      <section className="py-20 bg-gradient-to-br from-silver to-platinum">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-black text-navy mb-6">What Our Clients Say</h2>

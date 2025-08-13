@@ -1,0 +1,41 @@
+Build me a modern, responsive website for my AI agency called Smart Serve.
+What the website must include:
+✅ General Vibe:
+Clean, tech-inspired design — futuristic but professional
+Color palette: Cool tones (blues, silvers, whites, gradients are welcome)
+Smart layout that looks high-end and eye-catching
+Include 1 3D illustration on the homepage (relevant to AI or tech)
+Fully responsive (works well on mobile)
+🧠 About the Agency (Main Page Content):
+My agency Smart Serve provides AI-powered solutions for small businesses. We focus on:
+AI-powered chatbots for websites and e-commerce
+AI virtual booking agents for service-based businesses
+Automated ordering systems for restaurants
+Custom AI workflow automations (e.g., lead filtering, support ticket sorting)
+Include a short but impactful company mission like:
+“At Smart Serve, we use the power of AI to elevate your customer experience, automate operations, and help your business scale — smartly.”
+⭐ Add These Two Testimonials:
+LabelledByLailaa:
+“Smart Serve helped me build a custom AI chatbot and virtual bookings agent for my boutique — and it’s changed everything. Customers get quick, 24/7 answers, and my bookings have doubled. Game changer!”
+Café Aurora (fake):
+“We needed a smarter ordering system — Smart Serve delivered. Their custom AI handles online orders, routes them to the kitchen, and even upsells side items. It’s like having an extra employee, without the cost.”
+💰 Pricing Page:
+Make it clean and clear with 3 tiers:
+Starter - $199/month
+1 AI chatbot
+Basic website integration
+Email support
+Pro - $499/month
+AI chatbot + Booking Agent
+Custom design integration
+Priority support
+Monthly usage reports
+Elite - $999/month
+Full AI suite (chatbot, booking agent, ordering system, automations)
+Custom-built solution
+Dedicated support manager
+Full analytics + optimization
+Include a simple “Get Started” or “Book a Demo” button on each pricing card.
+📄 Pages:
+Home (Main info, services, testimonials, 3D illustration)
+Pricing (The 3 tiers above)

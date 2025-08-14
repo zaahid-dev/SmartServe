@@ -1,0 +1,1118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartServe AI - Your Business, On Autopilot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'smart-navy': '#1E293B',
+                        'smart-blue': '#3B82F6',
+                        'smart-accent': '#60A5FA',
+                        'smart-slate': '#64748B',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1E293B 0%, #3B82F6 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGJElEQVR4nO2Ye0xTVxzHv7e9vS/a0lIo8lAeggKKCDoVfKDOqVuiJpvJlmzJYszixuKWbMm2ZNmSJVuyLduy/bEt2ZYt2ZJtybZkS7YlW7Jk2ZJtybZkS7YlW7Jk25JtybZkS7YlW7JkS7YlW7Jk25JtybZkS7Yl25JtybZkS7YlW7JkS7YlW7Jk25JtybZkS7YlW7Jk25JtybZkS7YlW7Jk25JtybZkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7Jk25JtybZkS7YlW7JkS7YlW7Jk25JtybZkS7YlW7Jk25JtybZkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7Jk25JtybZkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7Jk25JtybZkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7Jk25JtybZkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS7YlW7JkS2=" alt="SmartServe AI Logo" class="h-10 w-auto">
+                    <div class="text-xl font-bold text-smart-navy">SmartServe AI</div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-smart-slate hover:text-smart-navy transition-colors font-medium">Home</a>
+                    <a href="#services" class="text-smart-slate hover:text-smart-navy transition-colors font-medium">Services</a>
+                    <a href="#pricing" class="text-smart-slate hover:text-smart-navy transition-colors font-medium">Pricing</a>
+                    <a href="#testimonials" class="text-smart-slate hover:text-smart-navy transition-colors font-medium">Testimonials</a>
+                    <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="bg-gradient-to-r from-smart-navy to-smart-blue text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 font-medium">
+                        Book a Call
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-smart-navy">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block text-smart-slate hover:text-smart-navy transition-colors font-medium">Home</a>
+                <a href="#services" class="block text-smart-slate hover:text-smart-navy transition-colors font-medium">Services</a>
+                <a href="#pricing" class="block text-smart-slate hover:text-smart-navy transition-colors font-medium">Pricing</a>
+                <a href="#testimonials" class="block text-smart-slate hover:text-smart-navy transition-colors font-medium">Testimonials</a>
+                <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="block bg-gradient-to-r from-smart-navy to-smart-blue text-white px-6 py-2 rounded-full text-center font-medium">
+                    Book a Call
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 gradient-bg overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Your business, 
+                        <span class="text-smart-accent">on autopilot</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100 leading-relaxed">
+                        We build AI-powered chatbots, booking systems, and smart automations that handle your customers — even while you sleep.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="bg-white text-smart-navy px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 text-center">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Book a Free Call
+                        </a>
+                        <a href="https://wa.me/27823333775" target="_blank" class="glass-card text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300 text-center">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <!-- AI Technology Illustration with floating animation -->
+                    <div class="animate-float">
+                        <!-- Modern AI brain illustration with circuit patterns -->
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="AI Technology Illustration" class="rounded-2xl shadow-2xl w-full h-auto">
+                    </div>
+                    <!-- Floating Elements -->
+                    <div class="absolute -top-4 -right-4 bg-smart-accent/20 backdrop-blur-sm rounded-full p-4 animate-pulse-slow">
+                        <i class="fas fa-robot text-white text-2xl"></i>
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 bg-white/20 backdrop-blur-sm rounded-full p-4 animate-pulse-slow">
+                        <i class="fas fa-cogs text-white text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-smart-navy mb-6">
+                    What We Do
+                </h2>
+                <p class="text-xl text-smart-slate max-w-3xl mx-auto leading-relaxed">
+                    At SmartServe AI, we use the power of AI to elevate your customer experience, automate operations, and help your business scale — smartly.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Chatbots Service -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+                    <div class="mb-6">
+                        <!-- Modern business automation - chatbots in action -->
+                        <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="AI Chatbot Interface" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <div class="bg-smart-navy p-3 rounded-full w-fit">
+                            <i class="fas fa-comments text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-smart-navy mb-4 group-hover:text-smart-blue transition-colors">
+                        AI Chatbots
+                    </h3>
+                    <p class="text-smart-slate leading-relaxed mb-6">
+                        Social media platforms such as IG & WhatsApp auto-replies — respond instantly 24/7 to your customers with intelligent, context-aware conversations.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-smart-slate">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            24/7 Customer Support
+                        </li>
+                        <li class="flex items-center text-smart-slate">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            Multi-platform Integration
+                        </li>
+                        <li class="flex items-center text-smart-slate">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            Smart Lead Qualification
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Booking Systems Service -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+                    <div class="mb-6">
+                        <!-- Professional business automation - scheduling systems -->
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Automated Booking System" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <div class="bg-smart-navy p-3 rounded-full w-fit">
+                            <i class="fas fa-calendar-check text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-smart-navy mb-4 group-hover:text-smart-blue transition-colors">
+                        Smart Booking Systems
+                    </h3>
+                    <p class="text-smart-slate leading-relaxed mb-6">
+                        Clients book directly into your calendar with intelligent scheduling that handles conflicts, reminders, and follow-ups automatically.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-smart-slate">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            Automated Scheduling
+                        </li>
+                        <li class="flex items-center text-smart-slate">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            Smart Reminders
+                        </li>
+                        <li class="flex items-center text-smart-slate">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            Calendar Integration
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Automation Service -->
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+                    <div class="mb-6">
+                        <!-- Futuristic tech elements - automation workflows -->
+                        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Smart Automation Workflows" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <div class="bg-smart-navy p-3 rounded-full w-fit">
+                            <i class="fas fa-cogs text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-smart-navy mb-4 group-hover:text-smart-blue transition-colors">
+                        Smart Automation
+                    </h3>
+                    <p class="text-smart-slate leading-relaxed mb-6">
+                        Lead capture, reminders, order flows & more such as an AI receptionist that handles complex business workflows intelligently.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-smart-slate">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            Lead Scraping & Collection
+                        </li>
+                        <li class="flex items-center text-smart-slate">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            CRM Integration
+                        </li>
+                        <li class="flex items-center text-smart-slate">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            Automated Workflows
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="mt-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-smart-navy mb-6">
+                        How It Works
+                    </h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-smart-navy to-smart-blue rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white font-bold text-2xl">1</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-smart-navy mb-4">Tell us your goal</h3>
+                        <p class="text-smart-slate">Chatbot? Bookings? Follow-ups? You choose what your business needs most.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-smart-navy to-smart-blue rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white font-bold text-2xl">2</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-smart-navy mb-4">We build your system</h3>
+                        <p class="text-smart-slate">Tailored to your business in just 1–3 days with cutting-edge AI technology.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-smart-navy to-smart-blue rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white font-bold text-2xl">3</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-smart-navy mb-4">You go live</h3>
+                        <p class="text-smart-slate">Your system starts working — and you get your time back to focus on growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-smart-navy mb-6">
+                    Smart Pricing for Every Business
+                </h2>
+                <p class="text-xl text-smart-slate max-w-3xl mx-auto leading-relaxed">
+                    Transparent pricing with no hidden fees. Choose the solution that fits your business needs.
+                </p>
+            </div>
+
+            <!-- Basic Chatbots -->
+            <div class="mb-12">
+                <div class="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold text-smart-navy mb-4">Basic Chatbots</h3>
+                        <p class="text-smart-slate mb-6">Perfect for simpler needs such as FAQs, customer queries, and lead capture</p>
+                        <div class="flex items-baseline justify-center">
+                            <span class="text-5xl font-bold text-smart-navy">R1,000</span>
+                            <span class="text-smart-slate ml-2">setup fee</span>
+                        </div>
+                        <div class="mt-2">
+                            <span class="text-3xl font-bold text-smart-blue">R450</span>
+                            <span class="text-smart-slate">/month</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            <span class="text-smart-slate">FAQ handling and customer queries</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            <span class="text-smart-slate">Lead capture and support redirection</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            <span class="text-smart-slate">External site and payment page routing</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-smart-blue mr-3"></i>
+                            <span class="text-smart-slate">Perfect for landing pages and contact forms</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="text-center">
+                        <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="bg-gradient-to-r from-smart-navy to-smart-blue text-white px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 font-semibold">
+                            Book a Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Automation Bots -->
+            <div class="mb-12">
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold text-smart-navy mb-4">Advanced Automation Bots</h3>
+                        <p class="text-smart-slate mb-6">Custom automation flows for lead scraping, booking systems, CRM updates, and complex workflows</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
+                            <div>
+                                <div class="mb-6">
+                                    <div class="flex items-baseline">
+                                        <span class="text-3xl font-bold text-smart-navy">R1,500</span>
+                                        <span class="text-smart-slate ml-2">/month license</span>
+                                    </div>
+                                    <div class="flex items-baseline mt-2">
+                                        <span class="text-2xl font-bold text-smart-blue">R800</span>
+                                        <span class="text-smart-slate ml-2">setup fee</span>
+                                    </div>
+                                </div>
+                                
+                                <h4 class="font-bold text-smart-navy mb-4">Usage Tiers (Monthly):</h4>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-smart-slate">0-50 executions</span>
+                                        <span class="font-semibold text-smart-navy">R600</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-smart-slate">50-250 executions</span>
+                                        <span class="font-semibold text-smart-navy">R850</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-smart-slate">250-500 executions</span>
+                                        <span class="font-semibold text-smart-navy">R1,250</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-smart-slate">500+ executions</span>
+                                        <span class="font-semibold text-smart-navy">R2,500</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold text-smart-navy mb-4">What You Get:</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-smart-blue mr-3 mt-1"></i>
+                                        <span class="text-smart-slate">Lead scraping and collection</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-smart-blue mr-3 mt-1"></i>
+                                        <span class="text-smart-slate">Automated booking systems</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-smart-blue mr-3 mt-1"></i>
+                                        <span class="text-smart-slate">CRM updates and email follow-ups</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-smart-blue mr-3 mt-1"></i>
+                                        <span class="text-smart-slate">Data syncing and logic-based workflows</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-smart-blue mr-3 mt-1"></i>
+                                        <span class="text-smart-slate">Custom-built solution</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-smart-blue mr-3 mt-1"></i>
+                                        <span class="text-smart-slate">Priority support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="bg-gradient-to-r from-smart-navy to-smart-blue text-white px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 font-semibold">
+                            Book a Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WhatsApp Add-on -->
+            <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 max-w-2xl mx-auto">
+                <div class="text-center mb-6">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class="fab fa-whatsapp text-4xl text-green-600 mr-3"></i>
+                        <h3 class="text-3xl font-bold text-smart-navy">WhatsApp Bot Integration</h3>
+                    </div>
+                    <p class="text-smart-slate mb-6">Add WhatsApp as a channel for your bot (Add-on to existing services)</p>
+                    <div class="flex items-baseline justify-center">
+                        <span class="text-4xl font-bold text-green-600">R400</span>
+                        <span class="text-smart-slate ml-2">/month</span>
+                    </div>
+                    <p class="text-sm text-smart-slate mt-2">Final pricing depends on estimated message volume and use case</p>
+                </div>
+                
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                        <span class="text-smart-slate">Real-time WhatsApp conversations</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                        <span class="text-smart-slate">WhatsApp Business integration</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                        <span class="text-smart-slate">Automated message handling</span>
+                    </li>
+                </ul>
+                
+                <div class="text-center">
+                    <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="bg-green-600 text-white px-8 py-4 rounded-full hover:bg-green-700 transition-all duration-300 font-semibold">
+                        Book a Demo
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-smart-slate text-lg">
+                    Built for businesses that want more time, more clients, and less admin.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-smart-navy mb-6">
+                    What Our Clients Are Saying
+                </h2>
+                <p class="text-xl text-smart-slate max-w-3xl mx-auto leading-relaxed">
+                    See how SmartServe AI has transformed businesses across South Africa
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Lailaa Testimonial -->
+                <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-start mb-6">
+                        <!-- Professional business owner in boutique setting -->
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Boutique Business Environment" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-smart-navy text-lg">Lailaa</h4>
+                            <p class="text-smart-slate">Boutique Owner – Cape Town</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-smart-slate text-lg leading-relaxed italic">
+                        "I don't even check my DMs anymore. My bot handles everything. It's completely changed how I run my boutique – customers get instant responses 24/7, and I can focus on what I love most about my business."
+                    </blockquote>
+                </div>
+
+                <!-- Lebo Testimonial -->
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-start mb-6">
+                        <!-- Professional hair salon business environment -->
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Hair Salon Business Environment" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-smart-navy text-lg">Lebo</h4>
+                            <p class="text-smart-slate">Hair Stylist – Pretoria</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-smart-slate text-lg leading-relaxed italic">
+                        "Saved me so much time. I booked 5 new clients in a weekend. The automated booking system is incredible – it handles everything from scheduling to sending reminders. I can't imagine running my salon without it now."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/CTA Section -->
+    <section class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Ready to Put Your Business on Autopilot?
+            </h2>
+            <p class="text-xl text-blue-100 mb-12 leading-relaxed">
+                Let SmartServe AI handle your automation, so you can focus on scaling your business. 
+                Whether you're a boutique, salon, coach, or home business — we automate the boring stuff so you don't have to.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="glass-card text-white p-6 rounded-2xl hover:bg-white/20 transition-all duration-300 group">
+                    <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-calendar-alt text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Book a Free Call</h3>
+                    <p class="text-blue-100 text-sm">30-minute consultation to discuss your needs</p>
+                </a>
+                
+                <a href="https://wa.me/27823333775" target="_blank" class="glass-card text-white p-6 rounded-2xl hover:bg-white/20 transition-all duration-300 group">
+                    <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">WhatsApp Us</h3>
+                    <p class="text-blue-100 text-sm">Quick questions? Chat with us directly</p>
+                </a>
+                
+                <a href="mailto:smartservesa1@gmail.com" class="glass-card text-white p-6 rounded-2xl hover:bg-white/20 transition-all duration-300 group">
+                    <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Email Us</h3>
+                    <p class="text-blue-100 text-sm">Send us your requirements and questions</p>
+                </a>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-white mb-4">Get Started Today</h3>
+                <p class="text-blue-100 mb-6">Join hundreds of South African businesses already using SmartServe AI</p>
+                <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="bg-white text-smart-navy px-10 py-4 rounded-full font-bold hover:shadow-2xl transition-all duration-300 inline-block text-lg">
+                    Book Your Free Strategy Call
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-smart-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGJElEQVR4nO2Ye0xTVxzHv7e9vS/a0lIo8lAeggKKCDoVfKDOqVuiJpvJlmzJlmxbMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm2bMm<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartServeAI - Your Business, On Autopilot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'smart-navy': '#1B365D',
+                        'smart-blue': '#4F46E5',
+                        'smart-cyan': '#06B6D4',
+                        'smart-silver': '#E5E7EB',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%);
+        }
+        
+        .tech-grid {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(79, 70, 229, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="font-inter bg-white text-gray-900">
+
+    <!-- @COMPONENT: Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVgSURBVHgB7VpNbBRVFH7vzOy0pf1paaG0tLYU6A8/VQOYECMSEw0xJJJIQjAhJhIPGhMPJh5ITDx4McYYL8aDiQcTEw8mHjQmHjQmHjQmJh5MSLwYEx9ITDwYE2+aN..." alt="Smart Serve Logo" class="h-8 w-auto">
+                    <span class="text-xl font-bold text-smart-navy">SmartServeAI</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-smart-blue transition-colors font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-smart-blue transition-colors font-medium">Services</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-smart-blue transition-colors font-medium">Pricing</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-smart-blue transition-colors font-medium">Testimonials</a>
+                    <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="bg-smart-blue hover:bg-smart-navy text-white px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
+                        Book Free Call
+                    </a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-smart-blue">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-4 space-y-4">
+                <a href="#home" class="block text-gray-700 hover:text-smart-blue font-medium">Home</a>
+                <a href="#services" class="block text-gray-700 hover:text-smart-blue font-medium">Services</a>
+                <a href="#pricing" class="block text-gray-700 hover:text-smart-blue font-medium">Pricing</a>
+                <a href="#testimonials" class="block text-gray-700 hover:text-smart-blue font-medium">Testimonials</a>
+                <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="block bg-smart-blue text-white px-6 py-2 rounded-full font-medium text-center">
+                    Book Free Call
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section id="home" class="min-h-screen flex items-center gradient-bg tech-grid relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-smart-blue/20 to-smart-cyan/20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Your Business,<br>
+                        <span class="text-smart-cyan">On Autopilot</span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 text-gray-100 leading-relaxed">
+                        We build AI-powered chatbots, booking systems, and smart automations that handle your customers — even while you sleep.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="bg-white text-smart-navy px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 text-center">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Book Free Call
+                        </a>
+                        <a href="https://wa.me/27823333775" target="_blank" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-smart-navy transition-all duration-300 text-center">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center lg:justify-end">
+                    <!-- 3D AI Technology Illustration -->
+                    <!-- A futuristic 3D rendered scene showing interconnected AI nodes and neural networks -->
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" alt="3D AI Technology Illustration" class="w-full max-w-lg h-auto animate-float rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-smart-navy mb-6">What We Do</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    SmartServeAI offers intelligent automation and chatbot solutions tailored for growing businesses.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1: Chatbots -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-smart-blue/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-2xl text-smart-blue"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-smart-navy mb-4">💬 Chatbots</h3>
+                    <p class="text-gray-600 mb-6">Social media platforms such as IG & WhatsApp auto-replies — respond instantly 24/7</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check text-smart-blue mr-2"></i> Instagram & WhatsApp integration</li>
+                        <li class="flex items-center"><i class="fas fa-check text-smart-blue mr-2"></i> 24/7 automated responses</li>
+                        <li class="flex items-center"><i class="fas fa-check text-smart-blue mr-2"></i> FAQ handling</li>
+                        <li class="flex items-center"><i class="fas fa-check text-smart-blue mr-2"></i> Lead capture & support</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2: Booking Systems -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-smart-cyan/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-calendar-check text-2xl text-smart-cyan"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-smart-navy mb-4">📅 Booking Systems</h3>
+                    <p class="text-gray-600 mb-6">Clients book directly into your calendar with automated reminders and confirmations</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check text-smart-cyan mr-2"></i> Direct calendar integration</li>
+                        <li class="flex items-center"><i class="fas fa-check text-smart-cyan mr-2"></i> Automated reminders</li>
+                        <li class="flex items-center"><i class="fas fa-check text-smart-cyan mr-2"></i> Payment processing</li>
+                        <li class="flex items-center"><i class="fas fa-check text-smart-cyan mr-2"></i> No-show reduction</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3: Smart Automation -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-purple-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-smart-navy mb-4">⚙️ Smart Automation</h3>
+                    <p class="text-gray-600 mb-6">Lead capture, reminders, order flows & more such as an AI receptionist</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> Lead scraping & collection</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> CRM updates & follow-ups</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> Data syncing workflows</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> AI receptionist systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Services Section -->
+
+    <!-- @COMPONENT: How It Works Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-smart-navy mb-6">🛠️ How It Works</h2>
+                <p class="text-xl text-gray-600">Simple process, powerful results</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-smart-blue to-smart-cyan w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                        1️⃣
+                    </div>
+                    <h3 class="text-xl font-bold text-smart-navy mb-4">Tell us your goal</h3>
+                    <p class="text-gray-600">Chatbot? Bookings? Follow-ups? You choose.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-smart-blue to-smart-cyan w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                        2️⃣
+                    </div>
+                    <h3 class="text-xl font-bold text-smart-navy mb-4">We build your system</h3>
+                    <p class="text-gray-600">Tailored to your business in just 1–3 days.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-smart-blue to-smart-cyan w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                        3️⃣
+                    </div>
+                    <h3 class="text-xl font-bold text-smart-navy mb-4">You go live</h3>
+                    <p class="text-gray-600">Your system starts working — and you get your time back.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: How It Works Section -->
+
+    <!-- @COMPONENT: Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-smart-navy mb-6">⭐ What Clients Are Saying</h2>
+                <p class="text-xl text-gray-600">Real results from real businesses</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <!-- Modern boutique storefront with elegant clothing displays -->
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=80&h=80" alt="Boutique business" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-smart-navy text-lg">Lailaa</h4>
+                            <p class="text-gray-600">Boutique Owner – Cape Town</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <blockquote class="text-gray-700 text-lg italic">
+                        "I don't even check my DMs anymore. My bot handles everything."
+                    </blockquote>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <!-- Modern hair salon interior with styling chairs and professional equipment -->
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=80&h=80" alt="Hair salon business" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-smart-navy text-lg">Lebo</h4>
+                            <p class="text-gray-600">Hair Stylist – Pretoria</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <blockquote class="text-gray-700 text-lg italic">
+                        "Saved me so much time. I booked 5 new clients in a weekend."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials Section -->
+
+    <!-- @COMPONENT: Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-smart-navy mb-6">💰 Pricing & Plans</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose the perfect plan for your business. All prices in South African Rand.
+                </p>
+            </div>
+            
+            <!-- Basic Chatbots -->
+            <div class="mb-16">
+                <div class="bg-gradient-to-r from-smart-blue/5 to-smart-cyan/5 rounded-3xl p-8 border border-smart-blue/20">
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold text-smart-navy mb-4">🤖 Basic Chatbots</h3>
+                        <p class="text-gray-600 text-lg">Perfect for simpler needs like FAQs, lead capture, and customer support</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-check text-smart-blue mr-3"></i> FAQ handling & customer queries</li>
+                                <li class="flex items-center"><i class="fas fa-check text-smart-blue mr-3"></i> Lead capture and support redirection</li>
+                                <li class="flex items-center"><i class="fas fa-check text-smart-blue mr-3"></i> External site integration</li>
+                                <li class="flex items-center"><i class="fas fa-check text-smart-blue mr-3"></i> Landing page optimization</li>
+                            </ul>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-smart-navy mb-2">R1,000 <span class="text-lg font-normal text-gray-600">setup</span></div>
+                            <div class="text-2xl font-semibold text-smart-blue mb-4">R450/month</div>
+                            <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="bg-smart-blue hover:bg-smart-navy text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 inline-block">
+                                Book Free Call
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Advanced Automation Bots -->
+            <div class="mb-16">
+                <div class="bg-gradient-to-r from-purple-50 to-smart-blue/5 rounded-3xl p-8 border border-purple-200 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-gradient-to-r from-smart-blue to-smart-cyan text-white px-6 py-2 rounded-full text-sm font-semibold">MOST POPULAR</span>
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold text-smart-navy mb-4">🔧 Advanced Automation Bots</h3>
+                        <p class="text-gray-600 text-lg">Custom automation flows for complex business processes</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold text-smart-navy mb-4">Features Include:</h4>
+                            <ul class="space-y-3 text-gray-700 mb-6">
+                                <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-3"></i> Lead scraping and collection</li>
+                                <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-3"></i> Automated booking systems</li>
+                                <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-3"></i> CRM updates and email follow-ups</li>
+                                <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-3"></i> Data syncing and logic-based workflows</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-white rounded-2xl p-6 shadow-lg">
+                                <div class="text-center mb-4">
+                                    <div class="text-2xl font-bold text-smart-navy">R1,500/month</div>
+                                    <div class="text-sm text-gray-600">License & API Access</div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h5 class="font-semibold text-smart-navy mb-2">Usage Tiers:</h5>
+                                    <div class="space-y-2 text-sm">
+                                        <div class="flex justify-between">
+                                            <span>0-50 executions</span>
+                                            <span class="font-semibold">R600/month</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>50-250 executions</span>
+                                            <span class="font-semibold">R850/month</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>250-500 executions</span>
+                                            <span class="font-semibold">R1,250/month</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>500+ executions</span>
+                                            <span class="font-semibold">R2,500/month</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center text-sm text-gray-600 mb-4">
+                                    + R800 one-time implementation fee
+                                </div>
+                                
+                                <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="w-full bg-gradient-to-r from-smart-blue to-smart-cyan hover:from-smart-navy hover:to-smart-blue text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 text-center block">
+                                    Book Free Call
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- WhatsApp Add-on -->
+            <div class="bg-green-50 rounded-3xl p-8 border border-green-200">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-smart-navy mb-4">💬 WhatsApp Bot Integration (Add-on)</h3>
+                    <p class="text-gray-600 text-lg">Add WhatsApp as a channel for your bot, enabling real-time conversations</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center"><i class="fab fa-whatsapp text-green-600 mr-3"></i> WhatsApp Business integration</li>
+                            <li class="flex items-center"><i class="fab fa-whatsapp text-green-600 mr-3"></i> Real-time conversation automation</li>
+                            <li class="flex items-center"><i class="fab fa-whatsapp text-green-600 mr-3"></i> Custom message flows</li>
+                            <li class="flex items-center"><i class="fab fa-whatsapp text-green-600 mr-3"></i> Multi-platform synchronization</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                            <p class="text-sm text-yellow-800"><i class="fas fa-info-circle mr-2"></i>Note: WhatsApp integration requires existing license from Advanced Automation or Basic Chatbot plans</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-smart-navy mb-2">From R400</div>
+                        <div class="text-lg text-gray-600 mb-4">per month</div>
+                        <div class="text-sm text-gray-600 mb-6">Final pricing depends on message volume and use case</div>
+                        <a href="https://wa.me/27823333775" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 inline-flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Pricing Section -->
+
+    <!-- @COMPONENT: CTA Section -->
+    <section class="py-20 gradient-bg tech-grid relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-smart-blue/20 to-smart-cyan/20"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Ready to Put Your Business on Autopilot?
+            </h2>
+            <p class="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
+                Let SmartServeAI handle your automation, so you can focus on scaling your business. Whether you're a boutique, salon, coach, or home business — we automate the boring stuff so you don't have to.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="bg-white text-smart-navy px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    Book a Free Call
+                </a>
+                <a href="https://wa.me/27823333775" target="_blank" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-smart-navy transition-all duration-300 inline-flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    WhatsApp Us
+                </a>
+            </div>
+            
+            <div class="mt-8 flex justify-center">
+                <a href="mailto:smartservesa1@gmail.com" class="text-gray-200 hover:text-white transition-colors inline-flex items-center">
+                    <i class="fas fa-envelope mr-2"></i>
+                    smartservesa1@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: CTA Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-smart-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVgSURBVHgB7VpNbBRVFH7vzOy0pf1paaG0tLYU6A8/VQOYECMSEw0xJJJIQjAhJhIPGhMPJh5ITDx4McYYL8aDiQcTEw8mHjQmHjQmJh5MSLwYEx9ITDwYE2+aN..." alt="Smart Serve Logo" class="h-8 w-auto filter brightness-0 invert">
+                        <span class="text-xl font-bold">SmartServeAI</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">Your business, on autopilot.</p>
+                    <p class="text-gray-400">
+                        Built for businesses that want more time, more clients, and less admin.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>AI Chatbots</li>
+                        <li>Booking Systems</li>
+                        <li>Smart Automation</li>
+                        <li>WhatsApp Integration</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>
+                            <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="hover:text-white transition-colors">
+                                <i class="fas fa-calendar-alt mr-2"></i>Book a Call
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/27823333775" target="_blank" class="hover:text-white transition-colors">
+                                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:smartservesa1@gmail.com" class="hover:text-white transition-colors">
+                                <i class="fas fa-envelope mr-2"></i>Email
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 SmartServeAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/27823333775" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 animate-pulse-slow">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (nav) {
+                    if (window.scrollY > 50) {
+                        nav.classList.add('shadow-lg');
+                    } else {
+                        nav.classList.remove('shadow-lg');
+                    }
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

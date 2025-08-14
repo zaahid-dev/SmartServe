@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartServeAI - Your Business on Autopilot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'navy': '#1a1f36',
+                        'platinum': '#e5e7eb',
+                        'electric': '#3b82f6',
+                        'gradient-start': '#6366f1',
+                        'gradient-end': '#8b5cf6',
+                    },
+                    backgroundImage: {
+                        'premium-gradient': 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #3b82f6 100%)',
+                        'hero-gradient': 'linear-gradient(135deg, #1a1f36 0%, #2d3748 50%, #4a5568 100%)',
+                        'card-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+            to { box-shadow: 0 0 30px rgba(99, 102, 241, 0.6); }
+        }
+        
+        .glass-morphism {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .premium-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .premium-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed w-full z-50 glass-morphism">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMjAiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl8xXzEpIi8+CjxwYXRoIGQ9Ik0yMCA4QzE4LjM0IDggMTcgOS4zNCAxNyAxMUMxNyAxMi42NiAxOC4zNCAxNCAyMCAxNEMyMS42NiAxNCAyMyAxMi42NiAyMyAxMUMyMyA5LjM0IDIxLjY2IDggMjAgOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNyAxNkMyNS4zNCAxNiAyNCAxNy4zNCAyNCAxOUMyNCAyMC42NiAyNS4zNCAyMiAyNyAyMkMyOC42NiAyMiAzMCAyMC42NiAzMCAxOUMzMCAxNy4zNCAyOC42NiAxNiAyNyAxNloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMyAxNkMxMS4zNCAxNiAxMCAxNy4zNCAxMCAxOUMxMCAyMC42NiAxMS4zNCAyMiAxMyAyMkMxNC42NiAyMiAxNiAyMC42NiAxNiAxOUMxNiAxNy4zNCAxNC42NiAxNiAxMyAxNloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMCAyNEMxOC4zNCAyNCAxNyAyNS4zNCAxNyAyN0MxNyAyOC42NiAxOC4zNCAzMCAyMCAzMEMyMS42NiAzMCAyMyAyOC42NiAyMyAyN0MyMyAyNS4zNCAyMS42NiAyNCAyMCAyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMCAxNkgxMy4zTDEwIDI3SDMwTDI2LjcgMTZIMjAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzFfMSIgeDE9IjAiIHkxPSIwIiB4Mj0iNDAiIHkyPSI0MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjM2NkYxIi8+CjxzdG9wIG9mZnNldD0iMC41IiBzdG9wLWNvbG9yPSIjOEI1Q0Y2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzNCODJGNiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=" alt="SmartServeAI Logo" class="w-10 h-10">
+                    <div>
+                        <div class="text-xl font-bold text-navy">SmartServeAI</div>
+                        <div class="text-xs text-gray-500">Your Business on Autopilot</div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-gradient-start transition-colors font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-gradient-start transition-colors font-medium">Services</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-gradient-start transition-colors font-medium">Pricing</a>
+                    <a href="#contact" class="bg-premium-gradient text-white px-6 py-2 rounded-full font-semibold premium-hover">Get Started</a>
+                </div>
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- Hero Section -->
+    <!-- @COMPONENT: HeroSection -->
+    <section id="home" class="min-h-screen bg-hero-gradient flex items-center relative overflow-hidden pt-16">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-start rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-end rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="text-white">
+                <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-tight">
+                    Your Business,
+                    <span class="gradient-text">On Autopilot</span>
+                </h1>
+                <p class="text-xl lg:text-2xl mb-8 text-gray-300 font-light">
+                    At SmartServeAI, we use the power of AI to elevate your customer experience, automate operations, and help your business scale — smartly.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-premium-gradient px-8 py-4 rounded-full text-white font-bold text-lg premium-hover animate-glow">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Book Free Consultation
+                    </button>
+                    <button class="border-2 border-white px-8 py-4 rounded-full text-white font-bold text-lg premium-hover hover:bg-white hover:text-navy">
+                        <i class="fas fa-play mr-2"></i>
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <!-- 3D Illustration placeholder - AI/Tech themed -->
+                <!-- A futuristic 3D render of interconnected AI nodes and neural networks with glowing connections -->
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="3D AI neural network visualization" class="w-full h-auto animate-float rounded-2xl shadow-2xl">
+                <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-premium-gradient rounded-2xl flex items-center justify-center animate-pulse">
+                    <i class="fas fa-robot text-white text-2xl"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- Services Section -->
+    <!-- @COMPONENT: ServicesSection -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-navy mb-6">
+                    Advanced AI Solutions
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Transform your business with cutting-edge AI automation designed for premium results.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Advanced Automation Bots -->
+                <div class="glass-morphism rounded-3xl p-8 premium-hover relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-start opacity-10 rounded-full -mr-16 -mt-16"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-premium-gradient rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-cogs text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy mb-4">Advanced Automation Bots</h3>
+                        <p class="text-gray-600 mb-6">
+                            Custom automation flows for lead scraping, booking systems, CRM updates, and data syncing with logic-based workflows.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-2"></i> Lead capture & collection</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-2"></i> Automated booking systems</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-2"></i> CRM integration & follow-ups</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-2"></i> AI receptionist capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Bot Integration -->
+                <div class="glass-morphism rounded-3xl p-8 premium-hover relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-end opacity-10 rounded-full -mr-16 -mt-16"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-premium-gradient rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fab fa-whatsapp text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy mb-4">WhatsApp Bot Integration</h3>
+                        <p class="text-gray-600 mb-6">
+                            Real-time conversations and automation within WhatsApp Business for instant customer engagement and support.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-2"></i> 24/7 instant responses</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-2"></i> Social media auto-replies</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-2"></i> Direct calendar booking</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-2"></i> Smart conversation routing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Basic Chatbots -->
+                <div class="glass-morphism rounded-3xl p-8 premium-hover relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-electric opacity-10 rounded-full -mr-16 -mt-16"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-premium-gradient rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-comments text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy mb-4">Premium Chatbots</h3>
+                        <p class="text-gray-600 mb-6">
+                            Sophisticated conversational AI for FAQs, customer queries, lead capture, and seamless support redirection.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-2"></i> FAQ automation</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-2"></i> Lead capture & qualification</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-2"></i> Support ticket routing</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-2"></i> Payment page integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ServicesSection -->
+
+    <!-- How It Works -->
+    <!-- @COMPONENT: ProcessSection -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-navy mb-6">
+                    Executive-Level <span class="gradient-text">Implementation</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Premium service delivery in just 1-3 days with white-glove implementation.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-premium-gradient rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-white text-2xl font-black">1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-4">Strategic Consultation</h3>
+                    <p class="text-gray-600">
+                        Deep-dive analysis of your business needs. Chatbot? Bookings? Follow-ups? We design the perfect solution.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-premium-gradient rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-white text-2xl font-black">2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-4">Custom Development</h3>
+                    <p class="text-gray-600">
+                        Bespoke AI system tailored to your business, built by our expert team in just 1–3 days.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-premium-gradient rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-white text-2xl font-black">3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-4">Premium Launch</h3>
+                    <p class="text-gray-600">
+                        Your system goes live with full support. Get your time back while your business runs on autopilot.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProcessSection -->
+
+    <!-- Testimonials -->
+    <!-- @COMPONENT: TestimonialsSection -->
+    <section class="py-20 bg-navy relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-1/3 left-1/3 w-96 h-96 bg-gradient-start rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/3 right-1/3 w-64 h-64 bg-gradient-end rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-white mb-6">
+                    Client Success Stories
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Join successful business owners who transformed their operations with SmartServeAI.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 - Real from Notion -->
+                <div class="glass-morphism rounded-3xl p-8 premium-hover">
+                    <div class="flex items-center mb-6">
+                        <!-- Professional business owner headshot -->
+                        <img src="https://pixabay.com/get/g826d53e765f9dcc8be87c8e3263c5e66a18698d9039c3989bc951fbbfccccba15d548e43181d6414127f71dc09c30c53e9d03ba82949a2b561041e042ecc40a8_1280.jpg" alt="Lailaa, Boutique Owner" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <div class="text-white font-bold text-lg">Lailaa</div>
+                            <div class="text-gray-300 text-sm">Boutique Owner • Cape Town</div>
+                        </div>
+                    </div>
+                    <blockquote class="text-white text-lg leading-relaxed">
+                        "I don't even check my DMs anymore. My bot handles everything. SmartServe helped me build a custom AI chatbot and virtual bookings agent for my boutique — and it's changed everything."
+                    </blockquote>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 - Real from Notion -->
+                <div class="glass-morphism rounded-3xl p-8 premium-hover">
+                    <div class="flex items-center mb-6">
+                        <!-- Professional hair stylist headshot -->
+                        <img src="https://pixabay.com/get/g0a9de776a09605558f71d3bc607222e1b9e13dbb9047224fc2da732cc7285a831120dd1febc4504b5646c1c6cae6476032055d688caeba01519dff29af2ef327_1280.jpg" alt="Lebo, Hair Stylist" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <div class="text-white font-bold text-lg">Lebo</div>
+                            <div class="text-gray-300 text-sm">Hair Stylist • Pretoria</div>
+                        </div>
+                    </div>
+                    <blockquote class="text-white text-lg leading-relaxed">
+                        "Saved me so much time. I booked 5 new clients in a weekend. The system works perfectly and my clients love how easy it is to book appointments."
+                    </blockquote>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: TestimonialsSection -->
+
+    <!-- Pricing Section -->
+    <!-- @COMPONENT: PricingSection -->
+    <section id="pricing" class="py-20 bg-gradient-to-br from-white to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-navy mb-6">
+                    Premium AI Solutions
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Transparent pricing for South African businesses. All prices in ZAR.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <!-- Advanced Automation Bots -->
+                <div class="bg-white rounded-3xl p-8 shadow-2xl premium-hover relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-start opacity-5 rounded-full -mr-16 -mt-16"></div>
+                    <div class="relative z-10">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-navy mb-2">Advanced Automation</h3>
+                            <p class="text-gray-600">Custom AI workflows & automations</p>
+                        </div>
+                        
+                        <div class="text-center mb-8">
+                            <div class="text-4xl font-black text-navy mb-2">R1,500<span class="text-lg font-normal">/mo</span></div>
+                            <p class="text-sm text-gray-500">License & API Access</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h4 class="font-bold text-navy mb-4">Usage Tiers (per month):</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">0-50 executions:</span>
+                                    <span class="font-semibold text-navy">R600</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">50-250 executions:</span>
+                                    <span class="font-semibold text-navy">R850</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">250-500 executions:</span>
+                                    <span class="font-semibold text-navy">R1,250</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">500+ executions:</span>
+                                    <span class="font-semibold text-navy">R2,500</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <div class="bg-gradient-start bg-opacity-10 rounded-2xl p-4 text-center">
+                                <div class="text-sm text-gray-600">One-time Setup</div>
+                                <div class="text-2xl font-bold text-navy">R800</div>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 mb-8 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-3"></i> Lead scraping & collection</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-3"></i> Automated booking systems</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-3"></i> CRM updates & follow-ups</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-3"></i> Data syncing workflows</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-start mr-3"></i> AI receptionist</li>
+                        </ul>
+
+                        <button class="w-full bg-premium-gradient text-white py-4 rounded-full font-bold text-lg premium-hover">
+                            Get Advanced AI
+                        </button>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Bot Integration -->
+                <div class="bg-white rounded-3xl p-8 shadow-2xl premium-hover relative overflow-hidden border-4 border-gradient-start">
+                    <div class="absolute top-4 right-4 bg-gradient-start text-white px-4 py-1 rounded-full text-xs font-bold">
+                        POPULAR
+                    </div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-end opacity-5 rounded-full -mr-16 -mt-16"></div>
+                    <div class="relative z-10">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-navy mb-2">WhatsApp Integration</h3>
+                            <p class="text-gray-600">Add WhatsApp to any automation</p>
+                        </div>
+                        
+                        <div class="text-center mb-8">
+                            <div class="text-4xl font-black text-navy mb-2">+R400<span class="text-lg font-normal">/mo</span></div>
+                            <p class="text-sm text-gray-500">Added to existing license</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <div class="bg-gradient-end bg-opacity-10 rounded-2xl p-6 text-center">
+                                <div class="text-sm text-gray-600 mb-2">Combined with Automation License</div>
+                                <div class="text-3xl font-black gradient-text">R1,900/mo</div>
+                                <div class="text-xs text-gray-500">+ usage tiers</div>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 mb-8 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-end mr-3"></i> Real-time WhatsApp conversations</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-end mr-3"></i> Social media auto-replies</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-end mr-3"></i> Direct calendar booking</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-end mr-3"></i> 24/7 instant responses</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gradient-end mr-3"></i> Message volume optimization</li>
+                        </ul>
+
+                        <button class="w-full bg-premium-gradient text-white py-4 rounded-full font-bold text-lg premium-hover animate-glow">
+                            Add WhatsApp Bot
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Basic Chatbots -->
+                <div class="bg-white rounded-3xl p-8 shadow-2xl premium-hover relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-electric opacity-5 rounded-full -mr-16 -mt-16"></div>
+                    <div class="relative z-10">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-navy mb-2">Premium Chatbots</h3>
+                            <p class="text-gray-600">Perfect for FAQs & lead capture</p>
+                        </div>
+                        
+                        <div class="text-center mb-8">
+                            <div class="text-4xl font-black text-navy mb-2">R450<span class="text-lg font-normal">/mo</span></div>
+                            <p class="text-sm text-gray-500">Monthly subscription</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <div class="bg-electric bg-opacity-10 rounded-2xl p-4 text-center">
+                                <div class="text-sm text-gray-600">One-time Setup</div>
+                                <div class="text-2xl font-bold text-navy">R1,000</div>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 mb-8 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check text-electric mr-3"></i> FAQ automation</li>
+                            <li class="flex items-center"><i class="fas fa-check text-electric mr-3"></i> Customer query handling</li>
+                            <li class="flex items-center"><i class="fas fa-check text-electric mr-3"></i> Lead capture & qualification</li>
+                            <li class="flex items-center"><i class="fas fa-check text-electric mr-3"></i> Support redirection</li>
+                            <li class="flex items-center"><i class="fas fa-check text-electric mr-3"></i> Landing page integration</li>
+                        </ul>
+
+                        <button class="w-full border-2 border-electric text-electric py-4 rounded-full font-bold text-lg premium-hover hover:bg-electric hover:text-white">
+                            Start with Chatbot
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enterprise CTA -->
+            <div class="bg-navy rounded-3xl p-12 text-center text-white relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10">
+                    <div class="absolute top-0 left-1/4 w-64 h-64 bg-gradient-start rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-end rounded-full blur-3xl"></div>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-3xl font-bold mb-4">Need a Custom Enterprise Solution?</h3>
+                    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                        Large-scale implementations, custom integrations, and dedicated support for enterprise clients.
+                    </p>
+                    <button class="bg-premium-gradient px-10 py-4 rounded-full text-white font-bold text-lg premium-hover">
+                        Contact Enterprise Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: PricingSection -->
+
+    <!-- Contact Section -->
+    <!-- @COMPONENT: ContactSection -->
+    <section id="contact" class="py-20 bg-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-white mb-6">
+                    Ready to Transform Your Business?
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Book a free consultation and discover how SmartServeAI can revolutionize your operations.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <!-- Book a Call -->
+                <div class="glass-morphism rounded-3xl p-8 premium-hover">
+                    <div class="w-16 h-16 bg-premium-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-calendar-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Book Free Consultation</h3>
+                    <p class="text-gray-300 mb-6">Schedule a 30-minute strategy session to discuss your AI automation needs.</p>
+                    <a href="https://calendly.com/smartservesa1/30min" target="_blank" class="bg-premium-gradient px-8 py-3 rounded-full text-white font-bold inline-block premium-hover">
+                        Schedule Now
+                    </a>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="glass-morphism rounded-3xl p-8 premium-hover">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-whatsapp text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">WhatsApp Chat</h3>
+                    <p class="text-gray-300 mb-6">Get instant answers to your questions via WhatsApp. We respond within hours.</p>
+                    <a href="https://wa.me/27823333775" target="_blank" class="bg-green-500 px-8 py-3 rounded-full text-white font-bold inline-block premium-hover">
+                        Chat Now
+                    </a>
+                </div>
+
+                <!-- Email -->
+                <div class="glass-morphism rounded-3xl p-8 premium-hover">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-envelope text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Email Us</h3>
+                    <p class="text-gray-300 mb-6">Send us detailed information about your project and we'll get back to you soon.</p>
+                    <a href="mailto:smartservesa1@gmail.com" class="bg-blue-500 px-8 py-3 rounded-full text-white font-bold inline-block premium-hover">
+                        Send Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- Footer -->
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-black py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMjAiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl8xXzEpIi8+CjxwYXRoIGQ9Ik0yMCA4QzE4LjM0IDggMTcgOS4zNCAxNyAxMUMxNyAxMi42NiAxOC4zNCAxNCAyMCAxNEMyMS42NiAxNCAyMyAxMi42NiAyMyAxMUMyMyA5LjM0IDIxLjY2IDggMjAgOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNyAxNkMyNS4zNCAxNiAyNCAxNy4zNCAyNCAxOUMyNCAyMC42NiAyNS4zNCAyMiAyNyAyMkMyOC42NiAyMiAzMCAyMC42NiAzMCAxOUMzMCAxNy4zNCAyOC42NiAxNiAyNyAxNloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMyAxNkMxMS4zNCAxNiAxMCAxNy4zNCAxMCAxOUMxMCAyMC42NiAxMS4zNCAyMiAxMyAyMkMxNC42NiAyMiAxNiAyMC42NiAxNiAxOUMxNiAxNy4zNCAyOC42NiAxNiAxMyAxNloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMCAyNEMxOC4zNCAyNCAxNyAyNS4zNCAxNyAyN0MxNyAyOC42NiAxOC4zNCAzMCAyMCAzMEMyMS42NiAzMCAyMyAyOC42NiAyMyAyN0MyMyAyNS4zNCAyMS42NiAyNCAyMCAyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMCAxNkgxMy4zTDEwIDI3SDMwTDI2LjcgMTZIMjAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzFfMSIgeDE9IjAiIHkxPSIwIiB4Mj0iNDAiIHkyPSI0MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjM2NkYxIi8+CjxzdG9wIG9mZnNldD0iMC41IiBzdG9wLWNvbG9yPSIjOEI1Q0Y2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzNCODJGNiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=" alt="SmartServeAI Logo" class="w-10 h-10">
+                        <div class="text-white font-bold text-xl">SmartServeAI</div>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your business on autopilot. Premium AI automation for South African businesses.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Advanced Automation Bots</li>
+                        <li>WhatsApp Integration</li>
+                        <li>Premium Chatbots</li>
+                        <li>Custom AI Solutions</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>About Us</li>
+                        <li>Case Studies</li>
+                        <li>Support</li>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>+27 82 333 3775</li>
+                        <li>smartservesa1@gmail.com</li>
+                        <li>Cape Town, South Africa</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 SmartServeAI. All rights reserved. Built for South African businesses.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // TODO: Implement business logic, API calls, or state management
+        
+        // Smooth scrolling for navigation links
+        (function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add scroll effect to navigation
+            let lastScrollY = window.scrollY;
+            
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('nav');
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    nav.style.transform = 'translateY(-100%)';
+                } else {
+                    nav.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollY = currentScrollY;
+            });
+
+            // Add intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections for scroll animations
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(section);
+            });
+        })();
+    </script>
+</body>
+</html>

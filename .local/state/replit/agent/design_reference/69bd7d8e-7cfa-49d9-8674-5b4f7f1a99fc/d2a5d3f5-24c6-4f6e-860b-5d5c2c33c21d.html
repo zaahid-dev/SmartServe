@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Serve - AI-Powered Business Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': {
+                            50: '#eff6ff',
+                            500: '#0066ff',
+                            600: '#1e40af',
+                            700: '#1d4ed8',
+                        },
+                        'accent': {
+                            400: '#06b6d4',
+                            500: '#0891b2',
+                        },
+                        'neutral': {
+                            100: '#f8fafc',
+                            200: '#e2e8f0',
+                            400: '#64748b',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="font-inter bg-gradient-to-br from-neutral-900 via-neutral-800 to-primary-700 min-h-screen text-white">
+    
+    <!-- @COMPONENT: Navigation [responsive navigation bar] -->
+    <nav class="fixed top-0 w-full z-50 glass-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-white">Smart<span class="text-accent-400">Serve</span></h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-white hover:text-accent-400 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#services" class="text-white hover:text-accent-400 px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                        <a href="#testimonials" class="text-white hover:text-accent-400 px-3 py-2 text-sm font-medium transition-colors">Testimonials</a>
+                        <a href="#pricing" class="text-white hover:text-accent-400 px-3 py-2 text-sm font-medium transition-colors">Pricing</a>
+                        <button data-event="click:handleBookDemo" class="bg-gradient-to-r from-primary-500 to-accent-400 text-white px-6 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-opacity">Book Demo</button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white hover:text-accent-400">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section [main landing section with 3D illustration] -->
+    <section id="home" class="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-accent-400 bg-clip-text text-transparent">
+                        Elevate Your Business with AI
+                    </h1>
+                    <p class="text-xl text-neutral-200 mb-8 leading-relaxed">
+                        At Smart Serve, we use the power of AI to elevate your customer experience, automate operations, and help your business scale — smartly.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button data-event="click:handleGetStarted" class="bg-gradient-to-r from-primary-500 to-accent-400 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:scale-105 transition-all">
+                            Get Started
+                        </button>
+                        <button data-event="click:handleWatchDemo" class="border border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-neutral-900 transition-all">
+                            Watch Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 flex justify-center">
+                    <!-- Futuristic AI/tech 3D illustration -->
+                    <!-- @IMPLEMENTATION: Replace with actual 3D illustration or interactive component -->
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="AI technology 3D illustration" class="rounded-3xl shadow-2xl w-full max-w-md hover-scale" data-mock-image="true" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-500/20 to-transparent rounded-3xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Services Section [AI services showcase] -->
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6 text-white">Our AI-Powered Solutions</h2>
+                <p class="text-xl text-neutral-200 max-w-3xl mx-auto">Transform your business operations with cutting-edge AI technology designed for small businesses</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- AI Chatbots -->
+                <div class="glass-card rounded-2xl p-8 hover-scale">
+                    <div class="text-accent-400 text-4xl mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">AI Chatbots</h3>
+                    <p class="text-neutral-200">Smart chatbots for websites and e-commerce that provide 24/7 customer support and boost engagement.</p>
+                </div>
+
+                <!-- Virtual Booking Agents -->
+                <div class="glass-card rounded-2xl p-8 hover-scale">
+                    <div class="text-accent-400 text-4xl mb-4">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Virtual Booking</h3>
+                    <p class="text-neutral-200">AI-powered booking agents that handle appointments and reservations automatically for service businesses.</p>
+                </div>
+
+                <!-- Automated Ordering -->
+                <div class="glass-card rounded-2xl p-8 hover-scale">
+                    <div class="text-accent-400 text-4xl mb-4">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Smart Ordering</h3>
+                    <p class="text-neutral-200">Automated ordering systems for restaurants that streamline operations and increase order accuracy.</p>
+                </div>
+
+                <!-- Custom Automations -->
+                <div class="glass-card rounded-2xl p-8 hover-scale">
+                    <div class="text-accent-400 text-4xl mb-4">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Workflow Automation</h3>
+                    <p class="text-neutral-200">Custom AI workflows for lead filtering, support ticket sorting, and other business process automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Services Section -->
+
+    <!-- @COMPONENT: Testimonials Section [client testimonials] -->
+    <section id="testimonials" class="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6 text-white">What Our Clients Say</h2>
+                <p class="text-xl text-neutral-200">Real results from real businesses powered by Smart Serve AI</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Testimonial 1: LabelledByLailaa -->
+                <div class="glass-card rounded-2xl p-8 hover-scale">
+                    <div class="flex items-start space-x-4">
+                        <!-- Profile photo placeholder for boutique owner -->
+                        <img src="https://pixabay.com/get/g2ce30e81b5c89b886418e59dc8479bc5a907e264efb828c8e5a0d84c6a94a12a4c573c5e091fc2952ebfb3128d3b162ac1b7956f377fe7536b6104a2fdbf2929_1280.jpg" alt="LabelledByLailaa owner" class="w-16 h-16 rounded-full object-cover" data-mock-image="true" />
+                        <div>
+                            <div class="flex mb-4">
+                                <!-- @MAP: Array(5).fill().map((_, i) => ( -->
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <!-- @END_MAP )) -->
+                            </div>
+                            <p class="text-neutral-200 mb-6 italic text-lg leading-relaxed">
+                                "Smart Serve helped me build a custom AI chatbot and virtual bookings agent for my boutique — and it's changed everything. Customers get quick, 24/7 answers, and my bookings have doubled. Game changer!"
+                            </p>
+                            <div>
+                                <p class="text-white font-semibold" data-bind="testimonial.author">LabelledByLailaa</p>
+                                <p class="text-accent-400" data-bind="testimonial.business">Boutique Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2: Café Aurora -->
+                <div class="glass-card rounded-2xl p-8 hover-scale">
+                    <div class="flex items-start space-x-4">
+                        <!-- Profile photo placeholder for cafe owner -->
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" alt="Cafe Aurora owner" class="w-16 h-16 rounded-full object-cover" data-mock-image="true" />
+                        <div>
+                            <div class="flex mb-4">
+                                <!-- @MAP: Array(5).fill().map((_, i) => ( -->
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <!-- @END_MAP )) -->
+                            </div>
+                            <p class="text-neutral-200 mb-6 italic text-lg leading-relaxed">
+                                "We needed a smarter ordering system — Smart Serve delivered. Their custom AI handles online orders, routes them to the kitchen, and even upsells side items. It's like having an extra employee, without the cost."
+                            </p>
+                            <div>
+                                <p class="text-white font-semibold" data-bind="testimonial.author">Café Aurora</p>
+                                <p class="text-accent-400" data-bind="testimonial.business">Restaurant Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials Section -->
+
+    <!-- @COMPONENT: Pricing Section [3-tier pricing structure] -->
+    <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6 text-white">Choose Your AI Solution</h2>
+                <p class="text-xl text-neutral-200">Flexible pricing plans designed to scale with your business</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Starter Plan -->
+                <div class="glass-card rounded-2xl p-8 hover-scale relative">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">Starter</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-accent-400">$199</span>
+                            <span class="text-neutral-200">/month</span>
+                        </div>
+                        <ul class="text-neutral-200 space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-400 mr-3"></i>
+                                1 AI chatbot
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-400 mr-3"></i>
+                                Basic website integration
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-400 mr-3"></i>
+                                Email support
+                            </li>
+                        </ul>
+                        <button data-event="click:handleGetStarted" data-plan="starter" class="w-full bg-gradient-to-r from-primary-500 to-accent-400 text-white py-3 px-6 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="glass-card rounded-2xl p-8 hover-scale relative border-2 border-accent-400">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-gradient-to-r from-primary-500 to-accent-400 text-white px-4 py-2 rounded-full text-sm font-semibold">Most Popular</span>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">Pro</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-accent-400">$499</span>
+                            <span class="text-neutral-200">/month</span>
+                        </div>
+                        <ul class="text-neutral-200 space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-400 mr-3"></i>
+                                AI chatbot + Booking Agent
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-400 mr-3"></i>
+                                Custom design integration
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-400 mr-3"></i>
+                                Priority support
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-400 mr-3"></i>
+                                Monthly usage reports
+                            </li>
+                        </ul>
+                        <button data-event="click:handleGetStarted" data-plan="pro" class="w-full bg-gradient-to-r from-primary-500 to-accent-400 text-white py-3 px-6 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Elite Plan -->
+                <div class="glass-card rounded-2xl p-8 hover-scale relative">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">Elite</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-accent-400">$999</span>
+                            <span class="text-neutral-200">/month</span>
+                        </div>
+                        <ul class="text-neutral-200 space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-400 mr-3"></i>
+                                Full AI suite (all services)
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-400 mr-3"></i>
+                                Custom-built solution
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-400 mr-3"></i>
+                                Dedicated support manager
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-400 mr-3"></i>
+                                Full analytics + optimization
+                            </li>
+                        </ul>
+                        <button data-event="click:handleBookDemo" data-plan="elite" class="w-full bg-gradient-to-r from-primary-500 to-accent-400 text-white py-3 px-6 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                            Book a Demo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Pricing Section -->
+
+    <!-- @COMPONENT: CTA Section [call to action before footer] -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary-600 to-accent-400">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6 text-white">Ready to Transform Your Business?</h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Join hundreds of businesses already using Smart Serve AI to automate operations and delight customers.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button data-event="click:handleGetStarted" class="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-neutral-100 transition-colors">
+                    Start Your AI Journey
+                </button>
+                <button data-event="click:handleBookDemo" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-primary-600 transition-all">
+                    Book a Free Demo
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: CTA Section -->
+
+    <!-- @COMPONENT: Footer [company information and links] -->
+    <footer class="bg-neutral-900 py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold text-white mb-4">Smart<span class="text-accent-400">Serve</span></h3>
+                    <p class="text-neutral-200 mb-6 max-w-md">
+                        Empowering small businesses with AI-powered solutions that automate operations and enhance customer experiences.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-neutral-400 hover:text-accent-400 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-accent-400 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-accent-400 transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Services</h4>
+                    <ul class="text-neutral-400 space-y-2">
+                        <li><a href="#" class="hover:text-accent-400 transition-colors">AI Chatbots</a></li>
+                        <li><a href="#" class="hover:text-accent-400 transition-colors">Virtual Booking</a></li>
+                        <li><a href="#" class="hover:text-accent-400 transition-colors">Smart Ordering</a></li>
+                        <li><a href="#" class="hover:text-accent-400 transition-colors">Workflow Automation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="text-neutral-400 space-y-2">
+                        <li><a href="#" class="hover:text-accent-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-accent-400 transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-accent-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-accent-400 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-neutral-700 mt-12 pt-8">
+                <p class="text-neutral-400 text-center">
+                    © 2024 Smart Serve. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // TODO: Implement navigation smooth scrolling
+            // TODO: Implement demo booking modal/form
+            // TODO: Implement get started flow
+            // TODO: Implement mobile menu toggle
+            // TODO: Implement form validation and submission
+            
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add scroll effect to navigation
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.classList.add('bg-black/50');
+                } else {
+                    nav.classList.remove('bg-black/50');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

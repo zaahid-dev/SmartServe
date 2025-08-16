@@ -12,7 +12,8 @@ export default defineConfig({
   },
   root: "./client",
   build: {
-    outDir: "../client/dist",
-    emptyOutDir: true
+    outDir: "../dist/client",
+    emptyOutDir: true,
+    assetsDir: "assets"
   }
 });

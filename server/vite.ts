@@ -53,7 +53,7 @@ export async function setupVite(app: Express, server: Server) {
  * Serve static built frontend in production
  */
 export function serveStatic(app: Express) {
-  const distPath = path.resolve(process.cwd(), "client/dist");
+  const distPath = path.resolve(process.cwd(), "dist/client");
 
   if (!fs.existsSync(distPath)) {
     throw new Error(`Build directory not found: ${distPath}`);

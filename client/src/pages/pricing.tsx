@@ -473,7 +473,7 @@ export default function Pricing() {
       <Footer />
       
       {/* Custom styles */}
-      <style jsx>{`
+      <style>{`
         .slider::-webkit-slider-thumb {
           appearance: none;
           height: 24px;
